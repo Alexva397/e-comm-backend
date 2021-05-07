@@ -63,6 +63,16 @@ router.post('/', (req, res) => {
     });
 });
 
+
+// UPDATE SAMPLE //
+// {
+//   "id": 0,
+//   "product_name": " ",
+//   "price": 0,
+//   "stock": 0,
+//   "category_id": 0
+// }
+
 // update product
 router.put('/:id', (req, res) => {
   // update product data
@@ -100,10 +110,11 @@ router.put('/:id', (req, res) => {
     })
     .then((updatedProductTags) => res.json(updatedProductTags))
     .catch((err) => {
-      // console.log(err);
+      console.log(err);
       res.status(400).json(err);
     });
 });
+
 
 router.delete('/:id', async (req, res) => {
   try {
@@ -121,3 +132,5 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
+
+
