@@ -39,14 +39,14 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   try {
-    const catUpdate = await Category.update(req.body, {
+    const categoryUpdate = await Category.update(req.body, {
       where: { id: req.params.id }
     });
-    if (!catUpdate[0]) {
+    if (!categoryUpdate[0]) {
       res.status(404).json({ message: 'No category matching this id.' });
       return;
     }
-    res.status(200).json(catUpdate)
+    res.status(200).json(categoryUpdate)
   } catch (err) {
     res.status(500).json(err);
   }
