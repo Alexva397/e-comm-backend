@@ -14,7 +14,6 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-  console.log(req);
   try {
     const categoryData = await Category.findByPk(req.params.id, {
       include: [{ model: Product, as: 'products' }]
@@ -26,7 +25,6 @@ router.get('/:id', async (req, res) => {
     res.status(200).json(categoryData);
   } catch (err) {
     res.status(500).json(err);
-    console.log(err);
   }
 });
 
@@ -40,7 +38,6 @@ router.post('/', async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
-  // update a category by its `id` value
   try {
     const catUpdate = await Category.update(req.body, {
       where: { id: req.params.id }
