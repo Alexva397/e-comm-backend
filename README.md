@@ -23,7 +23,6 @@ The app utiliizes sequelize and express.js to execute the routing of data betwee
 - [Contributing](#contributing)
 - [License](#license)
 - [Tests](#test)
-- [Challenges](#challenges)
 - [Questions](#questions)
 
 
